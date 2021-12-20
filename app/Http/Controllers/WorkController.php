@@ -12,12 +12,12 @@ class WorkController extends Controller
         $items = Work::all();
         return view('work.index', ['items' => $items]);
     }
-}
 
-public function name()
+public function up()
 {
-    $name = [
-        'name' => work :: find();
-    ];
-    return view('work',$name);
+    Schema::create('users',function (Blueprint $table){
+    $table->bigIncrements('id');
+    $table->string('name');
+    });
+}
 }

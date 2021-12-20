@@ -5,32 +5,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
 <body>
   <header class="header">
     <h1>Atte</h1>
-    <nav class="nav">
-    <a href="">ホーム</a>
-    <a href="">日付一覧</a>
-    <a href="">ログアウト</a>
-    </nav>
+    <p>ホーム</p>
+    <p>日付一覧</p>
+    <p>ログアウト</p>
   </header>
   <main class="main">
+    <a href="" class="page_btn">＜</a>
+    <?php
+    print('Y-G-i');
+    ?>
+    <a href="" class="page_btn">＞</a>
     @section('content')
-    <form action="find" method="post">
-      
-      <h1><?php $user = Auth::user(); ?>{{$user->name}}さんお疲れ様です!>
-        <title>Document</title>
-      </head>
-      <body>
-        
-      </body>
-      </html></h1>
-        <button class="start">勤務開始</button>
-        <button class="stop">勤務終了</button>
-        <button class="break_start">休憩開始</button>
-        <button class="break_stop">休憩終了</button>
-    </form>
+    <table>
+      <tr>
+        <th>名前</th>
+        <th>勤務開始</th>
+        <th>勤務終了</th>
+        <th>休憩開始</th>
+        <th>休憩終了</th>
+      </tr>
       @foreach($items as $item)
       <tr>
         <td>{{$item->name}}</td>
@@ -42,10 +41,13 @@
     </table>
     @endsection
   </main>
+
+
+
+
   <footer class="footer">
     <small>Atte,inc.</small>
   </footer>
-
 </body>
 
 </html>
